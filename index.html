@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Sección principal del contenido -->
+    <div class="hero">
+        <!-- Contenedor principal -->
+        <div class="container">
+            <!-- Reloj digital -->
+            <div class="clock">
+                <!-- Dígitos para horas, minutos y segundos -->
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript para actualizar el reloj digital -->
+    <script>
+        // Obtener referencias a los elementos del reloj
+        let hrs = document.getElementById("hrs");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+
+        // Establecer un intervalo para actualizar el reloj cada segundo
+        setInterval(() => {
+            // Obtener la hora actual
+            let currentTime = new Date();
+
+            // Formatear y mostrar las horas, minutos y segundos
+            hrs.innerHTML = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+            min.innerHTML = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+            sec.innerHTML = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+        }, 1000);
+    </script>
+</body>
+</html>
